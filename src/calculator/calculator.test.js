@@ -35,8 +35,21 @@ describe("Calculator Test Cases", () => {
         fireEvent.click(screen.getByText("1"));
         fireEvent.click(screen.getByText("="));
         
-        // const result = await screen.findByTestId("Output"); 
-        // expect(result.textContent).toBe("33");
+        const result = await screen.findByTestId("Output"); 
+        expect(result.textContent).toBe("33");
+    });
+
+    test("Division", async () => {
+        render(<CalculatorWithJest />);
+        
+        fireEvent.click(screen.getByText("3"));
+        fireEvent.click(screen.getByText("2"));
+        fireEvent.click(screen.getByText("/"));
+        fireEvent.click(screen.getByText("2"));
+        fireEvent.click(screen.getByText("="));
+        
+        const result = await screen.findByTestId("Output"); 
+        expect(result.textContent).toBe("16");
     });
  
 });
