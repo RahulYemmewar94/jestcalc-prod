@@ -45,6 +45,7 @@ const CalculatorWithJest = () => {
           <button data-testid="1" onClick={() => handleCalculations("1")}>1</button>
           <button data-testid="2" onClick={() => handleCalculations("2")}>2</button>
           <button data-testid="3" onClick={() => handleCalculations("3")}>3</button>
+          <button data-testid="/" onClick={() => handleCalculations("/")}>/</button>
           <button data-testid="0" onClick={() => handleCalculations("0")}>0</button>
           <button data-testid="." onClick={() => handleCalculations(".")}>.</button>
           <button data-testid="C" onClick={() => handleCalculations("C")}>C</button>
