@@ -6,7 +6,6 @@ const CalculatorWithJest = () => {
   const handleCalculations = (value) => {
     if (value === "=") {
       try {
-        // Evaluate the mathematical expression
         const result = new Function(`return ${inputValue}`)();
         setInputValue(result.toString());
       } catch (error) {
@@ -42,7 +41,6 @@ const CalculatorWithJest = () => {
           <button data-testid="4" onClick={() => handleCalculations("4")}>4</button>
           <button data-testid="5" onClick={() => handleCalculations("5")}>5</button>
           <button data-testid="6" onClick={() => handleCalculations("6")}>6</button>
-          <button data-testid="*" onClick={() => handleCalculations("*")}>*</button>
           <button data-testid="1" onClick={() => handleCalculations("1")}>1</button>
           <button data-testid="2" onClick={() => handleCalculations("2")}>2</button>
           <button data-testid="3" onClick={() => handleCalculations("3")}>3</button>
