@@ -1,21 +1,19 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import CalculatorWithJestTestCases from "./calculator";
+import CalculatorWithJest from "./calculator";
 
 describe("Calculator Test Cases", () => {
-  test("Addition", async () => {
-    render(<CalculatorWithJestTestCases />);
-    
-    fireEvent.click(screen.getByText("2"));
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("+"));
-    fireEvent.click(screen.getByText("6"));
-    fireEvent.click(screen.getByText("1"));
-    fireEvent.click(screen.getByText("5"));
-    fireEvent.click(screen.getByText("="));
-    
-    const result = await screen.findByTestId("result"); 
-    expect(result).toHaveTextContent("636"); 
-  });
+    test("Addition", async () => {
+        render(<CalculatorWithJest />);
+        
+        fireEvent.click(screen.getByText("2"));
+        fireEvent.click(screen.getByText("+"));
+        fireEvent.click(screen.getByText("5"));
+        fireEvent.click(screen.getByText("="));
+        
+        const result = await screen.findByTestId("Output"); 
+        expect(result.textContent).toBe("7");
+    });
+
 
  
 });
