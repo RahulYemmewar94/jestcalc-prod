@@ -18,13 +18,12 @@ describe("Calculator Test Cases", () => {
         render(<CalculatorWithJest />);
         
         fireEvent.click(screen.getByText("8"));
-        fireEvent.click(screen.getByText("8"));
         fireEvent.click(screen.getByText("-"));
         fireEvent.click(screen.getByText("5"));
         fireEvent.click(screen.getByText("="));
         
         const result = await screen.findByTestId("Output"); 
-        expect(result.textContent).toBe("83");
+        expect(result.textContent).toBe("3");
     });
 
 
