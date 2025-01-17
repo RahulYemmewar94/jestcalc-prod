@@ -14,6 +14,19 @@ describe("Calculator Test Cases", () => {
         expect(result.textContent).toBe("7");
     });
 
+    test("Subtraction", async () => {
+        render(<CalculatorWithJest />);
+        
+        fireEvent.click(screen.getByText("8"));
+        fireEvent.click(screen.getByText("8"));
+        fireEvent.click(screen.getByText("-"));
+        fireEvent.click(screen.getByText("5"));
+        fireEvent.click(screen.getByText("="));
+        
+        const result = await screen.findByTestId("Output"); 
+        expect(result.textContent).toBe("83");
+    });
+
 
  
 });
